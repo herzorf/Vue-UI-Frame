@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/1446450047/Vue-UI-Frame/issues"
   },
-  "homepage": "https://github.com/1446450047/Vue-UI-Frame#readme"
+  "homepage": "https://github.com/1446450047/Vue-UI-Frame#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
