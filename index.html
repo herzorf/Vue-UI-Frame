@@ -35,17 +35,20 @@
 </head>
 <body>
 <div id="app">
-    <g-button>
+    <g-button :loading="loading1"  @click="loading1 = !loading1">
         文字
     </g-button>
-    <g-button icon = "settings">
+    <g-button :loading="loading2" icon = "settings"  @click="loading2 = !loading2">
         文字
     </g-button>
-    <g-button icon = "left" icon-position="right">
+    <g-button :loading="loading3" icon = "left" icon-position="right"  @click="loading3 = !loading3">
+        文字
+    </g-button>
+    <g-button :loading="loading4" icon = "download" icon-position="right"  @click="loading4 = !loading4">
         文字
     </g-button>
 </div>
 <script src="src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1808243_87lhmzm8h9g.js"></script>
+<script src="//at.alicdn.com/t/font_1808243_x4y8ujxxxri.js"></script>
 </body>
 </html>
