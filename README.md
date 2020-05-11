@@ -6,12 +6,37 @@
 
 
 ## 介绍
-
+这是我在学习Vue框架的时候写的一个Vue的UI框架，希望你能喜欢
 ## 开始使用
-安装：
 
-1.用前须知：本组件使用的是 
-```{box-sizing:border-box;}```请在css中开启
+1.用前须知：
+
+CSS要求：
+    
+本组件使用的是IE8及以上浏览器支持的border-box样式，请在css中开启
+    ```*，*::before,*::after{box-sizing:border-box;}```
+    
+你还需要设置默认颜色变量（后续会添加）
+    
+ 默认：
+  ```
+      html {
+                --button-height: 32px;
+                --font-size: 14px;
+                --border-radius: 4px;
+                --color: #333;
+                --border-color: #999;
+                --button-bg: #eee;
+                --button-hover-bg: #fff;
+                --button-active-bg: #ddd;
+            }
+ ```
+此样式IE 15以上才支持
+
+安装：Vue-UI-Frame
+```$xslt
+npm i --save Vue-UI-Frame
+```
 
 ## 文档
 
