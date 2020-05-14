@@ -33,7 +33,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .g-button {
         display: inline-flex;
         justify-content: center;

@@ -38,7 +38,7 @@ CSS要求：
 npm i --save Vue-UI-Frame
 ```
 引入 Vue-UI-Frame
-```vuejs
+```
 import { Button, ButtonGroup, Icon } from "vue-ui-frame";
 import "vue-ui-frame/dist/index.css";
 export default {
