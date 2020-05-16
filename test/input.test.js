@@ -70,5 +70,4 @@ describe('Input', () => {
             vm.$destroy()
         })
     })
-
 });

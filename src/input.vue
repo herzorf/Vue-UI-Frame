@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper" :class="{error}">
-        <input type="text" :placeholder="placeholder" :disabled="disabled" :readonly="readonly"
+        <input  :value="value" type="text" :placeholder="placeholder" :disabled="disabled" :readonly="readonly"
                @change="$emit('change',$event)"
-               @input="$emit('input',$event)"
+               @input="$emit('input',$event.target.value)"
                @focus="$emit('focus',$event)"
                @blur="$emit('blur',$event)">
         <template v-if="error">
@@ -33,6 +33,9 @@
             },
             error: {
                 type: String,
+            },
+            value:{
+                type:String
             }
         },
 

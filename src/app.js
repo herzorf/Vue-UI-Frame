@@ -17,11 +17,12 @@ new Vue({
             loading3: false,
             loading4: false,
             loading5: false,
+            message:"你好啊"
         }
     },
     methods:{
       inputChange($event){
-          console.log($event.target.value)
+
       }
     }
 })
