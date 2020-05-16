@@ -1,13 +1,20 @@
 <template>
     <div class="wrapper" :class="{error}">
-        <input type="text" :placeholder="placeholder"  :disabled="disabled" :readonly="readonly">
+        <input type="text" :placeholder="placeholder" :disabled="disabled" :readonly="readonly">
+        <template v-if="error">
+            <icon name="error" class="errorIcon"></icon>
+            <span class="error">{{error}}</span>
+        </template>
     </div>
 
 </template>
 
 <script>
+    import Icon from "./icon"
+
     export default {
         name: "input",
+        components: {Icon},
         props: {
             placeholder: {
                 type: String
@@ -17,11 +24,11 @@
                 type: Boolean,
                 default: false
             },
-            readonly:{
-                type:Boolean
+            readonly: {
+                type: Boolean
             },
-            error:{
-                type:String,
+            error: {
+                type: String,
             }
         }
     }
@@ -37,7 +44,8 @@
     $box-shadow-color: rgb(0, 0, 0, 0.5);
     $error: #F1453d;
     .wrapper {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
 
         > input {
             height: $height;
@@ -45,7 +53,7 @@
             border-radius: $border-radius;
             padding: 0 8px;
             font-size: 14px;
-
+            margin-right: 0.5em;
             &:hover {
                 border-color: $border-color-hover;
             }
@@ -54,16 +62,24 @@
                 box-shadow: inset 0 1px 3px $box-shadow-color;
                 outline: none;
             }
-            &[disabled]{
+
+            &[disabled] {
                 border-color: #cccccc;
                 color: #ccc;
                 cursor: not-allowed;
             }
         }
-        &.error{
-            > input{
-            border-color: $error;
-        }}
 
+        &.error {
+            > input {
+                border-color: $error;
+            }
+        }
+    >.errorIcon{
+        fill : $error;
+    }
+        >.error{
+            color: $error;
+        }
     }
 </style>
