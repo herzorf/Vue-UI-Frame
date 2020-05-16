@@ -1,6 +1,10 @@
 <template>
     <div class="wrapper" :class="{error}">
-        <input type="text" :placeholder="placeholder" :disabled="disabled" :readonly="readonly">
+        <input type="text" :placeholder="placeholder" :disabled="disabled" :readonly="readonly"
+               @change="$emit('change',$event)"
+               @input="$emit('input',$event)"
+               @focus="$emit('focus',$event)"
+               @blur="$emit('blur',$event)">
         <template v-if="error">
             <icon name="error" class="errorIcon"></icon>
             <span class="error">{{error}}</span>
@@ -30,7 +34,9 @@
             error: {
                 type: String,
             }
-        }
+        },
+
+
     }
 </script>
 
@@ -54,6 +60,7 @@
             padding: 0 8px;
             font-size: 14px;
             margin-right: 0.5em;
+
             &:hover {
                 border-color: $border-color-hover;
             }
@@ -75,10 +82,12 @@
                 border-color: $error;
             }
         }
-    >.errorIcon{
-        fill : $error;
-    }
-        >.error{
+
+        > .errorIcon {
+            fill: $error;
+        }
+
+        > .error {
             color: $error;
         }
     }
