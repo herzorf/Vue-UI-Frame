@@ -64,11 +64,42 @@
         </g-button-group>
     </div>
 
-    <g-input value="message" @change="inputChange" v-model="message"></g-input>
-    <g-input placeholder="无法操作的..." disabled></g-input>
-    <g-input placeholder="只读的内容..." readonly></g-input>
-    <g-input placeholder="输入文字..." error="输入的内容不符合要求"></g-input>
+    <div style="margin-bottom: 20px">
 
+        <g-input value="message" @change="inputChange" v-model="message"></g-input>
+        <g-input placeholder="无法操作的..." disabled></g-input>
+        <g-input placeholder="只读的内容..." readonly></g-input>
+        <g-input placeholder="输入文字..." error="输入的内容不符合要求"></g-input>
+
+    </div>
+    <hr>
+
+    <g-row>
+        <g-column>1</g-column>
+        <g-column>2</g-column>
+    </g-row>
+    <g-row>
+        <g-column>1</g-column>
+        <g-column>2</g-column>
+        <g-column>2</g-column>
+    </g-row>
+    <g-row>
+        <g-column>1</g-column>
+        <g-column>2</g-column>
+        <g-column>2</g-column>
+        <g-column>2</g-column>
+    </g-row>
+    <g-row>
+        <g-column>1</g-column>
+        <g-column>2</g-column>
+        <g-column>2</g-column>
+        <g-column>2</g-column>
+        <g-column>2</g-column>
+    </g-row>
+    <g-row>
+        <g-column span="2">1</g-column>
+        <g-column span="22">2</g-column>
+    </g-row>
 </div>
 <script src="src/app.js"></script>
 
