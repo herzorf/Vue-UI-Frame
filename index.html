@@ -34,28 +34,29 @@
     </style>
 </head>
 <body>
+
 <div id="app">
     <div style="margin-bottom: 20px">
-        <g-button :loading="loading1"  @click="loading1 = !loading1">
+        <g-button :loading="loading1" @click="loading1 = !loading1">
             文字
         </g-button>
-        <g-button :loading="loading2" icon = "settings"  @click="loading2 = !loading2">
+        <g-button :loading="loading2" icon="settings" @click="loading2 = !loading2">
             文字
         </g-button>
-        <g-button :loading="loading3" icon = "download" icon-position="right"  @click="loading3 = !loading3">
+        <g-button :loading="loading3" icon="download" icon-position="right" @click="loading3 = !loading3">
             文字
         </g-button>
-        <g-button :loading="loading4" icon = "thumbs-up" icon-position="right"  @click="loading4 = !loading4">
+        <g-button :loading="loading4" icon="thumbs-up" icon-position="right" @click="loading4 = !loading4">
             文字
         </g-button>
-        <g-button :loading="loading5" icon = "down" icon-position="right"  @click="loading5 = !loading5">
+        <g-button :loading="loading5" icon="down" icon-position="right" @click="loading5 = !loading5">
             文字
         </g-button>
         <g-button-group>
             <g-button icon="left">
                 上一页
             </g-button>
-            <g-button >
+            <g-button>
                 更多
             </g-button>
             <g-button icon="right" icon-position="right">
@@ -73,35 +74,37 @@
 
     </div>
     <hr>
-<div style="border: 1px solid black">
-    <g-row gutter="30">
-        <g-column>1</g-column>
-        <g-column>2</g-column>
-    </g-row>
-</div>
 
-<!--    <g-row>-->
-<!--        <g-column>1</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--    </g-row>-->
-<!--    <g-row>-->
-<!--        <g-column>1</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--    </g-row>-->
-<!--    <g-row>-->
-<!--        <g-column>1</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--        <g-column>2</g-column>-->
-<!--    </g-row>-->
-<!--    <g-row>-->
-<!--        <g-column span="2">1</g-column>-->
-<!--        <g-column span="22" offset="2">2</g-column>-->
-<!--    </g-row>-->
+    <g-row>
+        <g-column class="g" span="1">4</g-column>
+        <g-column span="23">20</g-column>
+    </g-row>
+    <g-row>
+        <g-column span="2">2</g-column>
+        <g-column span="22">22</g-column>
+    </g-row>
+    <g-row>
+        <g-column span="4">4</g-column>
+        <g-column span="20">20</g-column>
+    </g-row>
+    <g-row>
+        <g-column span="12">12</g-column>
+        <g-column span="12">12</g-column>
+    </g-row>
+    <g-row>
+        <g-column span="14">14</g-column>
+        <g-column span="10">10</g-column>
+    </g-row>
+    <g-row>
+        <g-column span="4">4</g-column>
+        <g-column span="20">20</g-column>
+    </g-row>
+    <g-row>
+        <g-column span="4">4</g-column>
+        <g-column span="20">20</g-column>
+    </g-row>
+
+
 </div>
 <script src="src/app.js"></script>
 
