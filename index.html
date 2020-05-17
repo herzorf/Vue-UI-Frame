@@ -34,7 +34,13 @@
     </style>
 </head>
 <body>
-
+<style>
+    .g {
+    background-color: #999999;
+    height: 100px;
+        border: 1px solid red;
+    }
+</style>
 <div id="app">
     <div style="margin-bottom: 20px">
         <g-button :loading="loading1" @click="loading1 = !loading1">
@@ -75,34 +81,19 @@
     </div>
     <hr>
 
+<!--    <g-row>-->
+<!--        <g-column  :phone="{span:14}" :iPad="{span:10}" :laptop="{span:6}" :pc4k="{span:2}">4</g-column>-->
+<!--        <g-column  :phone="{span:10}" :iPad="{span:14}" :laptop="{span:18}" :pc4k="{span:22}">20</g-column>-->
+<!--    </g-row>-->
     <g-row>
-        <g-column class="g" span="1">4</g-column>
-        <g-column span="23">20</g-column>
+        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
+        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
+        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
+        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
+        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
+        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
     </g-row>
-    <g-row>
-        <g-column span="2">2</g-column>
-        <g-column span="22">22</g-column>
-    </g-row>
-    <g-row>
-        <g-column span="4">4</g-column>
-        <g-column span="20">20</g-column>
-    </g-row>
-    <g-row>
-        <g-column span="12">12</g-column>
-        <g-column span="12">12</g-column>
-    </g-row>
-    <g-row>
-        <g-column span="14">14</g-column>
-        <g-column span="10">10</g-column>
-    </g-row>
-    <g-row>
-        <g-column span="4">4</g-column>
-        <g-column span="20">20</g-column>
-    </g-row>
-    <g-row>
-        <g-column span="4">4</g-column>
-        <g-column span="20">20</g-column>
-    </g-row>
+
 
 
 </div>
