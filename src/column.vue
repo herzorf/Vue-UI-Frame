@@ -54,9 +54,11 @@
                     this.span && `column-${this.span}`,
                     this.offset &&`offset-${this.offset}`,
                     this.phone && `column-phone-${this.phone.span}`,
+                    this.phone && `offset-phone-${this.phone.offset}`,
                     this.iPad && `column-iPad-${this.iPad.span}`,
+                    this.iPad && `offset-iPad-${this.iPad.offset}`,
                     this.laptop && `column-laptop-${this.laptop.span}`,
-
+                    this.laptop && `offset-laptop-${this.laptop.offset}`,
                 ]
             }
         }
