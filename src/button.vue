@@ -15,7 +15,7 @@
         components:{
           "g-icon":Icon,
         },
-        name: "button",
+        name: "G-button",
         props: {
             "icon": {},
             "iconPosition": {

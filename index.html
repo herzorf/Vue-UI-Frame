@@ -25,7 +25,7 @@
         }
 
         #app {
-            margin: 20px;
+            /*margin: 20px;*/
         }
 
         body {
@@ -35,65 +35,65 @@
 </head>
 <body>
 <style>
-    .g {
-    background-color: #999999;
-    height: 100px;
-        border: 1px solid red;
+    .demo {
+        border: 1px solid gray;
+        min-height: 100px;
     }
 </style>
 <div id="app">
-    <div style="margin-bottom: 20px">
-        <g-button :loading="loading1" @click="loading1 = !loading1">
-            文字
-        </g-button>
-        <g-button :loading="loading2" icon="settings" @click="loading2 = !loading2">
-            文字
-        </g-button>
-        <g-button :loading="loading3" icon="download" icon-position="right" @click="loading3 = !loading3">
-            文字
-        </g-button>
-        <g-button :loading="loading4" icon="thumbs-up" icon-position="right" @click="loading4 = !loading4">
-            文字
-        </g-button>
-        <g-button :loading="loading5" icon="down" icon-position="right" @click="loading5 = !loading5">
-            文字
-        </g-button>
-        <g-button-group>
-            <g-button icon="left">
-                上一页
-            </g-button>
-            <g-button>
-                更多
-            </g-button>
-            <g-button icon="right" icon-position="right">
-                下一页
-            </g-button>
-        </g-button-group>
-    </div>
 
-    <div style="margin-bottom: 20px">
+    <g-layout style="height: 100vh">
+        <g-sider class="demo">sider</g-sider>
 
-        <g-input value="message" @change="inputChange" v-model="message"></g-input>
-        <g-input placeholder="无法操作的..." disabled></g-input>
-        <g-input placeholder="只读的内容..." readonly></g-input>
-        <g-input placeholder="输入文字..." error="输入的内容不符合要求"></g-input>
+        <g-layout>
+            <g-header class="demo">header
+            </g-header>
+            <g-content class="demo">content</g-content>
+            <g-footer class="demo">footer</g-footer>
 
-    </div>
-    <hr>
-
-<!--    <g-row>-->
-<!--        <g-column  :phone="{span:14}" :iPad="{span:10}" :laptop="{span:6}" :pc4k="{span:2}">4</g-column>-->
-<!--        <g-column  :phone="{span:10}" :iPad="{span:14}" :laptop="{span:18}" :pc4k="{span:22}">20</g-column>-->
-<!--    </g-row>-->
-    <g-row>
-        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
-        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
-        <g-column  class="g"  :phone="{span:24}" :ipad="{span:12}" :laptop="{span:8}" ></g-column>
-
-    </g-row>
+        </g-layout>
 
 
+    </g-layout>
 
+
+    <!--    <div style="margin-bottom: 20px">-->
+    <!--        <g-button :loading="loading1" @click="loading1 = !loading1">-->
+    <!--            文字-->
+    <!--        </g-button>-->
+    <!--        <g-button :loading="loading2" icon="settings" @click="loading2 = !loading2">-->
+    <!--            文字-->
+    <!--        </g-button>-->
+    <!--        <g-button :loading="loading3" icon="download" icon-position="right" @click="loading3 = !loading3">-->
+    <!--            文字-->
+    <!--        </g-button>-->
+    <!--        <g-button :loading="loading4" icon="thumbs-up" icon-position="right" @click="loading4 = !loading4">-->
+    <!--            文字-->
+    <!--        </g-button>-->
+    <!--        <g-button :loading="loading5" icon="down" icon-position="right" @click="loading5 = !loading5">-->
+    <!--            文字-->
+    <!--        </g-button>-->
+    <!--        <g-button-group>-->
+    <!--            <g-button icon="left">-->
+    <!--                上一页-->
+    <!--            </g-button>-->
+    <!--            <g-button>-->
+    <!--                更多-->
+    <!--            </g-button>-->
+    <!--            <g-button icon="right" icon-position="right">-->
+    <!--                下一页-->
+    <!--            </g-button>-->
+    <!--        </g-button-group>-->
+    <!--    </div>-->
+
+    <!--    <div style="margin-bottom: 20px">-->
+
+    <!--        <g-input value="message" @change="inputChange" v-model="message"></g-input>-->
+    <!--        <g-input placeholder="无法操作的..." disabled></g-input>-->
+    <!--        <g-input placeholder="只读的内容..." readonly></g-input>-->
+    <!--        <g-input placeholder="输入文字..." error="输入的内容不符合要求"></g-input>-->
+
+    <!--    </div>-->
 </div>
 <script src="src/app.js"></script>
 

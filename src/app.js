@@ -5,13 +5,24 @@ import ButtonGroup from "./g-button-group.vue"
 import Input from "./input"
 import Row from "./row"
 import Column from "./column"
+import Layout from "./layout"
+import Sider from "./sider"
+import Header from "./header"
+import Content from "./content"
+import Footer from "./footer"
 
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
 Vue.component("g-button-group", ButtonGroup);
-Vue.component("g-input",Input)
-Vue.component("g-row",Row)
-Vue.component("g-column",Column)
+Vue.component("g-input",Input);
+Vue.component("g-row",Row);
+Vue.component("g-column",Column);
+Vue.component("g-layout",Layout);
+Vue.component("g-sider",Sider);
+Vue.component("g-header",Header);
+Vue.component("g-content",Content);
+Vue.component("g-footer",Footer);
+
 new Vue({
     el: "#app",
     data() {
@@ -26,7 +37,6 @@ new Vue({
     },
     methods:{
       inputChange($event){
-
       }
     }
 })
