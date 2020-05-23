@@ -64,6 +64,7 @@
             },
             close() {
                 this.$el.remove();
+                this.$emit("close");
                 this.$destroy();
             },
             log() {
@@ -84,7 +85,12 @@
     $border-radius: 4px;
     $line-height: 1.8;
     $background-color: rgb(0, 0, 0, 0.75);
+    @keyframes fadeIn {
+        0%{opacity: 0%;}
+        100%{opacity: 1;}
+    }
     .toast {
+        animation:fadeIn 0.3s linear;
         display: flex;
         min-height: $min-height;
         position: fixed;
