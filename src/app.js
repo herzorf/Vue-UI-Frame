@@ -45,7 +45,16 @@ new Vue({
         inputChange($event) {
         },
         showToast() {
-            this.$toast("我是message")
+            this.$toast("<p>知道错了没?</p>", {
+                enableHTML: true,
+                position: "middle",
+                closeButton: {
+                    text: "知道",
+                    callback(toast) {
+                        toast.log()
+                    }
+                },
+            });
         }
     }
 })
