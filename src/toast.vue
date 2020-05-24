@@ -3,8 +3,8 @@
         <div class="toast" ref="wrapper">
             <slot v-if="!enableHTML"></slot>
             <div v-else v-html="$slots.default[0]"></div>
-            <div class="line" ref="line"></div>
-            <span v-if="closeButton" @click="closeToast">{{closeButton.text}}</span>
+            <div  v-if=" closeButton " class="line" ref="line"></div>
+            <span v-if=" closeButton " @click="closeToast">{{closeButton.text}}</span>
         </div>
     </div>
 </template>
@@ -13,15 +13,14 @@
         name: "G-toast",
         props: {
             autoClose: {
-                type: Boolean,
-                default: true
-            },
-            autoCloseDelay: {
-                type: Number,
-                default: 3
+                type: [Boolean,Number],
+                default: false,
+                validator(value){
+                    return value === false || typeof value === "number"
+                }
             },
             closeButton: {
-                type: Object,
+                type: [Object,Boolean],
                 default: () => {
                     return {
                         text: "关闭", callback: undefined
@@ -38,7 +37,6 @@
                 validator(value) {
                     return ["top", "bottom", "middle"].indexOf(value) >= 0
                 }
-
             }
         },
         computed: {
@@ -47,7 +45,7 @@
             }
         },
         mounted() {
-            this.updateStyle();
+            if(this.closeButton){this.updateStyle();}
             this.execAutoClose();
         },
         methods: {
@@ -57,11 +55,11 @@
                 })
             },
             execAutoClose() {
-                if (this.autoClose && !this.closeButton) {
+                if (this.autoClose) {
                     setTimeout(() => {
                         this.close();
                         console.log("他认为自己没错");
-                    }, this.autoCloseDelay * 1000)
+                    }, this.autoClose * 1000)
                 }
             },
             close() {

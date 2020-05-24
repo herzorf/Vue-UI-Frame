@@ -47,13 +47,14 @@ new Vue({
         showToast() {
             this.$toast("<p>知道错了没?</p>", {
                 enableHTML: true,
-                position: "middle",
+                position: "top",
                 closeButton: {
-                    text: "知道",
+                    text: "知道了",
                     callback(toast) {
                         toast.log()
                     }
                 },
+                autoClose: false
             });
         }
     }
