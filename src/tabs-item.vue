@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" @click="xxx">
+    <div class="tabs-item" @click="xxx" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -7,6 +7,11 @@
 <script>
     export default {
         name: "G-tabs-item",
+        data() {
+            return {
+                active: false,
+            }
+        },
         inject: ["eventBus"],
         props: {
             disabled: {
@@ -20,9 +25,16 @@
         },
         created() {
             this.eventBus.$on("update:selected", (name) => {
-                console.log(name);
+                this.active = name === this.name;
             })
         },
+        computed:{
+            classes(){
+                return {
+                    active:this.active
+                }
+            }
+            },
         methods: {
             xxx() {
                 this.eventBus.$emit("update:selected", this.name);
@@ -35,5 +47,8 @@
     .tabs-item {
         flex-shrink: 0;
         padding: 0 2em;
+        &.active{
+            background:red ;
+        }
     }
 </style>
