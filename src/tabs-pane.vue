@@ -36,6 +36,6 @@
 
 <style scoped lang="scss">
 .active{
-    background-color: red;
+    padding: 1em;
 }
 </style>
