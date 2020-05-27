@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" @click="changeItem" :class="classes">
+    <div class="tabs-item" @click="changeItem" :class="classes" :data-name="name">
         <slot></slot>
     </div>
 </template>
@@ -24,25 +24,27 @@
             }
         },
         created() {
-            this.eventBus.$on("update:selected", (name) => {
-                this.active = name === this.name;
-            })
+            if (this.eventBus) {
+                this.eventBus.$on("update:selected", (name) => {
+                    this.active = name === this.name;
+                })
+            }
         },
-        computed:{
-            classes(){
+        computed: {
+            classes() {
                 return {
-                    active:this.active,
+                    active: this.active,
                     disabled: this.disabled
-
                 }
             }
-            },
+        },
         methods: {
             changeItem() {
-                if(this.disabled){
+                if (this.disabled) {
                     return
                 }
-                this.eventBus.$emit("update:selected", this.name, this);
+                this.eventBus && this.eventBus.$emit("update:selected", this.name, this);
+                this.$emit("click",this)
             }
         }
     }
@@ -50,7 +52,7 @@
 
 <style scoped lang="scss">
     $blue: #4d5aeb;
-    $disabled-color:gray;
+    $disabled-color: gray;
     .tabs-item {
         flex-shrink: 0;
         display: flex;
@@ -59,10 +61,12 @@
         padding: 0 2em;
         justify-content: center;
         align-items: center;
-        &.active{
+
+        &.active {
             color: $blue;
         }
-        &.disabled{
+
+        &.disabled {
             color: grey;
             cursor: not-allowed;
         }

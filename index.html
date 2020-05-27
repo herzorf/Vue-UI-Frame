@@ -34,33 +34,20 @@
     </style>
 </head>
 <body>
-<style>
-    .demo {
-        border: 1px solid gray;
-        min-height: 100px;
-    }
-</style>
-<div id="app">
-    <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
-        <g-tabs-head>
+<div id="app" style="margin: 100px 100px ;">
 
-            <g-tabs-item name="woman">
-                <g-icon name="settings"></g-icon>
-                美女
-            </g-tabs-item>
-            <g-tabs-item name="sport" disabled>体育</g-tabs-item>
-            <g-tabs-item name="finance">财经</g-tabs-item>
-            <template slot="actions">
-                <button>设置</button>
-            </template>
-        </g-tabs-head>
-        <g-tabs-body>
-            <g-tabs-pane name="woman">美女相关</g-tabs-pane>
-            <g-tabs-pane name="sport">体育相关</g-tabs-pane>
-            <g-tabs-pane name="finance">财经相关</g-tabs-pane>
-        </g-tabs-body>
-    </g-tabs>
-
+<g-popover >
+    <template>
+        <div slot="content">popover内容</div>
+    </template>
+    <button>点我</button>
+</g-popover>
+    <g-popover >
+        <template>
+            <div slot="content">popover内容</div>
+        </template>
+        <button>点我</button>
+    </g-popover>
 </div>
 <script src="src/app.js"></script>
 

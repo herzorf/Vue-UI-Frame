@@ -58,7 +58,6 @@
                 if (this.autoClose) {
                     setTimeout(() => {
                         this.close();
-                        console.log("他认为自己没错");
                     }, this.autoClose * 1000)
                 }
             },
