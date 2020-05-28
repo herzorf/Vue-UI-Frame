@@ -35,28 +35,62 @@
 </head>
 <body>
 <div id="app" style="margin: 100px 100px ;">
-    <div @click="yyy" style="overflow: hidden">
-        <g-popover position="bottom">
+    <div @click="yyy" style="overflow: hidden; margin-bottom:40px">
+        <g-popover position="bottom" trigger="click">
             <template>
-                <div slot="content">popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容</div>
+                <div slot="content">
+                    popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容
+                </div>
+            </template>
+            <g-button>点我</g-button>
+        </g-popover >
+        <g-popover position="top" trigger="click">
+            <template>
+                <div slot="content">popovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsa</div>
             </template>
             <g-button>点我</g-button>
         </g-popover>
-            <g-popover position="top">
-                <template>
-                    <div slot="content">popovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsa</div>
-                </template>
-                <g-button>点我</g-button>
-            </g-popover>
-        <g-popover position="left">
+        <g-popover position="left" trigger="click">
             <template>
                 <div slot="content">adasdasdsa</div>
             </template>
             <g-button>点我</g-button>
         </g-popover>
-        <g-popover position="right">
+        <g-popover position="right" trigger="click">
             <template>
-                <div slot="content">popovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsapopovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsa</div>
+                <div slot="content">
+                    popovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsapopovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsa
+                </div>
+            </template>
+            <g-button>点我</g-button>
+        </g-popover>
+    </div>
+    <div @click="yyy" style="overflow: hidden">
+        <g-popover position="bottom" trigger="hover">
+            <template>
+                <div slot="content">
+                    popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容
+                </div>
+            </template>
+            <g-button>点我</g-button>
+        </g-popover>
+        <g-popover position="top" trigger="hover">
+            <template>
+                <div slot="content">popovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsa</div>
+            </template>
+            <g-button>点我</g-button>
+        </g-popover>
+        <g-popover position="left" trigger="hover">
+            <template>
+                <div slot="content">adasdasdsa</div>
+            </template>
+            <g-button>点我</g-button>
+        </g-popover>
+        <g-popover position="right" trigger="hover">
+            <template>
+                <div slot="content">
+                    popovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsapopovedasdasdsadasdasdadsadadasdasdsadsdsadadasdasdsa
+                </div>
             </template>
             <g-button>点我</g-button>
         </g-popover>

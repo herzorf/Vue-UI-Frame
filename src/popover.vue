@@ -1,5 +1,5 @@
 <template>
-    <div class="popover" @click="onClick">
+    <div class="popover"  ref="popover">
         <div ref="contentWrapper" v-if="visible" class="content-wrapper" :class="{[`position-${position}`]:true}">
             <slot name="content"></slot>
         </div>
@@ -17,6 +17,38 @@
                 visible: false
             }
         },
+        mounted(){
+            if(this.trigger === "click"){
+                this.$refs.popover.addEventListener("click",this.onClick)
+            }else{
+                this.$refs.popover.addEventListener("mouseenter",this.onShow);
+                this.$refs.popover.addEventListener("mouseleave",this.close)
+                }
+        },
+        destroyed(){
+            if(this.trigger === "click"){
+                this.$refs.popover.removeEventListener("click",this.onClick)
+            }else{
+                this.$refs.popover.removeEventListener("mouseenter",this.onShow);
+                this.$refs.popover.removeEventListener("mouseleave",this.close)
+            }
+        },
+        computed:{
+            openEvent(){
+                if(this.trigger === "click"){
+                    return "click"
+                }else{
+                    return "mouseenter"
+                }
+            },
+            closeEvent(){
+                if(this.trigger === "click"){
+                    return "click"
+                }else{
+                    return "mouseleave"
+                }
+            }
+        },
         props: {
             position: {
                 type: String,
@@ -24,25 +56,41 @@
                 validator(value) {
                     return ["top", "bottom", "left", "right"].indexOf(value) >= 0
                 }
+            },
+            trigger:{
+                type:String,
+                default:"click",
+                validator(value) {
+                    return ["click","hover"].indexOf(value) >= 0
+                }
             }
         },
         methods: {
             positionContent() {
-                document.body.appendChild(this.$refs.contentWrapper);
-                let {width, height, top, left} = this.$refs.triggerWrapper.getBoundingClientRect();
-                if (this.position === "top") {
-                    this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
-                    this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
-                } else if (this.position === "bottom") {
-                    this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
-                    this.$refs.contentWrapper.style.top = top + window.scrollY + height + "px";
-                }else if(this.position === "left"){
-                    this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
-                    this.$refs.contentWrapper.style.top = top + window.scrollY+(height - this.$refs.contentWrapper.getBoundingClientRect().height)/2+ "px";
-                }else if(this.position === "right"){
-                    this.$refs.contentWrapper.style.left = left + window.scrollX + width + "px";
-                    this.$refs.contentWrapper.style.top = top + window.scrollY+(height - this.$refs.contentWrapper.getBoundingClientRect().height)/2+ "px";
+                const {contentWrapper,triggerWrapper} = this.$refs;
+                document.body.appendChild(contentWrapper);
+                const contentWrapperHeight = contentWrapper.getBoundingClientRect().height;
+                const {width, height, top, left} = triggerWrapper.getBoundingClientRect();
+                let position = {
+                    top:{
+                        left: left + window.scrollX,
+                        top:top + window.scrollY,
+                    },
+                    left:{
+                        left: left + window.scrollX,
+                        top:top + window.scrollY+(height - contentWrapperHeight)/2
+                    },
+                    bottom:{
+                        left : left + window.scrollX,
+                        top :top + window.scrollY + height,
+                    },
+                    right:{
+                        left : left + window.scrollX + width,
+                        top : top + window.scrollY+(height - contentWrapperHeight)/2
+                    }
                 }
+                contentWrapper.style.left = position[this.position].left + "px";
+                contentWrapper.style.top = position[this.position].top + "px"
             },
             onClickDocument(e) {
                 if (this.$refs.contentWrapper && !(this.$refs.triggerWrapper.contains(e.target) || this.$refs.contentWrapper.contains(e.target))) {
@@ -54,10 +102,15 @@
                 document.addEventListener("click", this.onClickDocument);
             },
             onShow() {
+                this.visible = true;
                 this.$nextTick(() => {
                     this.positionContent();
                     this.listenToDocument();
                 })
+            },
+            close(){
+                this.visible=false;
+                document.removeEventListener("click", this.onClickDocument);
             },
             onClick(event) {
                 if (this.$refs.triggerWrapper.contains(event.target)) {
@@ -68,8 +121,6 @@
                     }
                 }
             },
-            mounted() {
-            }
         }
     }
 </script>
