@@ -60,6 +60,7 @@ new Vue({
         inputChange($event) {
         },
         yyy(){
+            console.log("yyy");
         },
         showToast() {
             this.$toast("<p>知道错了没?</p>", {
