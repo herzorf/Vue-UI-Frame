@@ -1,6 +1,6 @@
 <template>
     <div class="collapseItem">
-        <div class="title" @click="open=!open">
+        <div class="title" @click="toggle">
             {{title}}
         </div>
         <div class="content" v-if="open">
@@ -12,15 +12,36 @@
 <script>
     export default {
         name: "G-collapse-item",
-        props:{
-            title:{
-                type:String,
-                require:true
+        inject: ["eventBus"],
+        props: {
+            title: {
+                type: String,
+                require: true
             }
         },
-        data(){
-            return{
-                open:false
+        mounted() {
+            this.eventBus.$on("update:selected", (vm) => {
+                if (vm !== this) {
+                    this.close()
+                }
+            })
+        },
+        methods: {
+            toggle() {
+                if (this.open) {
+                    this.open = false
+                } else {
+                    this.open = true;
+                    this.eventBus.$emit("update:selected", this);
+                }
+            },
+            close() {
+                this.open = false
+            }
+        },
+        data() {
+            return {
+                open: false
             }
         }
     }
@@ -28,10 +49,10 @@
 
 <style scoped lang="scss">
     $border-color: #ddd;
-    $border-radius:4px;
-    .collapseItem{
-        >.title{
-            border: 1px solid  $border-color;
+    $border-radius: 4px;
+    .collapseItem {
+        > .title {
+            border: 1px solid $border-color;
             margin-top: -1px;
             margin-left: -1px;
             margin-right: -1px;
@@ -40,19 +61,22 @@
             align-items: center;
             padding: 0 8px;
         }
-        &:first-child{
-            >.title {
+
+        &:first-child {
+            > .title {
                 border-top-left-radius: $border-radius;
                 border-top-right-radius: $border-radius;
             }
         }
-        &:last-child{
-            >.title:last-child {
+
+        &:last-child {
+            > .title:last-child {
                 border-bottom-left-radius: $border-radius;
                 border-bottom-right-radius: $border-radius;
             }
         }
-        >.content{
+
+        > .content {
             padding: 8px 8px;
         }
     }
