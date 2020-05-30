@@ -17,12 +17,18 @@
             title: {
                 type: String,
                 require: true
+            },
+            name:{
+                type: String,
+                default: "1"
             }
         },
         mounted() {
-            this.eventBus.$on("update:selected", (vm) => {
-                if (vm !== this) {
+            this.eventBus && this.eventBus.$on("update:selected", (name) => {
+                if (name !== this.name) {
                     this.close()
+                }else{
+                    this.show()
                 }
             })
         },
@@ -32,11 +38,14 @@
                     this.open = false
                 } else {
                     this.open = true;
-                    this.eventBus.$emit("update:selected", this);
+                    this.eventBus && this.eventBus.$emit("update:selected", this.name);
                 }
             },
             close() {
-                this.open = false
+                this.open = false;
+            },
+            show(){
+                this.open = true;
             }
         },
         data() {
