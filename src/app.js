@@ -47,7 +47,7 @@ new Vue({
     el: "#app",
     data() {
         return {
-            selectedTab:"1",
+            selectedTab:["1","2"],
             loading1: false,
             loading2: false,
             loading3: false,
