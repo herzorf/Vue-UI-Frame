@@ -2,7 +2,7 @@
     <button class="g-button" :class="{[`icon-${iconPosition}`]:true}"
     @click="$emit('click')">
         <g-icon v-if="icon && !loading" :name="icon"></g-icon>
-        <g-icon v-if="loading"  class="loading" v-if="icon" name="loading"></g-icon>
+        <g-icon v-if="loading"  class="loading icon"  name="loading"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -35,26 +35,34 @@
 
 <style lang="scss" scoped>
     .g-button {
+        $font-size:14px;
+        $color: #333;
+        $height:32px;
+        $background-color:#eee;
+        $border-color:#999;
+        $border-radius:4px;
+        $hover-color:#fff;
+        $active-color:#ddd;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         line-height: 14px;
-        font-size: var(--font-size);
-        height: var(--button-height);
-        background-color: var(--button-bg);
-        color: var(--color);
+        font-size: $font-size;
+        height: $height;
+        background-color: $background-color;
+        color: $color;
         padding: 0 1em;
-        border-radius: var(--border-radius);
-        border: 1px solid var(--border-color);
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
         cursor: pointer;
         vertical-align: middle;
 
         &:hover {
-            background-color: var(--button-hover-bg);
+            background-color: $hover-color;
         }
 
         &:active {
-            background-color: var(--button-active-bg);
+            background-color:$active-color;
         }
 
         &:focus {
