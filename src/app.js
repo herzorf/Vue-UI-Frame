@@ -3,15 +3,19 @@ import Button from "./button.vue"
 import Icon from "./icon"
 import ButtonGroup from "./g-button-group.vue"
 import Input from "./input"
+
 import Row from "./row"
 import Column from "./column"
+
 import Layout from "./layout"
 import Sider from "./sider"
 import Header from "./header"
 import Content from "./content"
 import Footer from "./footer"
+
 import Toast from "./toast"
 import plugin from "./plugin"
+
 import  Tabs from "./tabs"
 import  TabsHead from "./tabs-head"
 import  TabsBody from "./tabs-body"
@@ -47,7 +51,8 @@ new Vue({
     el: "#app",
     data() {
         return {
-            selectedTab:["1","2"],
+            selectedTab:"sport",
+//            selectedTab:["1","2"],
             loading1: false,
             loading2: false,
             loading3: false,

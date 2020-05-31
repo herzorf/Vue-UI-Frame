@@ -27,6 +27,7 @@
   "dependencies": {
     "chai-spies": "^1.0.0",
     "vue": "^2.6.11",
+    "vue-server-renderer": "2.6.11",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {

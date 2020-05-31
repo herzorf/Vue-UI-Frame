@@ -15,22 +15,7 @@ CSS要求：
     
 本组件使用的是IE8及以上浏览器支持的border-box样式，请在css中开启
     ```*，*::before,*::after{box-sizing:border-box;}```
-    
-你还需要设置默认颜色变量（后续会添加）
-    
- 默认：
-  ```
-      html {
-                --button-height: 32px;
-                --font-size: 14px;
-                --border-radius: 4px;
-                --color: #333;
-                --border-color: #999;
-                --button-bg: #eee;
-                --button-hover-bg: #fff;
-                --button-active-bg: #ddd;
-            }
- ```
+        
 此样式IE 15以上才支持
 
 安装：Vue-UI-Frame
@@ -39,7 +24,7 @@ npm i --save Vue-UI-Frame
 ```
 引入 Vue-UI-Frame
 ```
-import { Button, ButtonGroup, Icon } from "vue-ui-frame";
+import { Button, ButtonGroup, Icon,...} from "vue-ui-frame";
 import "vue-ui-frame/dist/index.css";
 export default {
   name: "App",
@@ -47,15 +32,17 @@ export default {
     HelloWorld,
     "g-button": Button,
     "g-Icon": Icon,
-    "g-button-group": ButtonGroup
+    "g-button-group": ButtonGroup,
+     ...
   }
 ```
 ## 文档
 
 ## 提问
-
 ## 变更记录
+暂无
 
 ## 联系方式
-
+联系我：1446450047@qq.com
 ## 贡献代码
+就我一个人
