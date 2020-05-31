@@ -67,9 +67,6 @@ new Vue({
     methods: {
         inputChange($event) {
         },
-        yyy(){
-            console.log("yyy");
-        },
         showToast() {
             this.$toast("<p>知道错了没?</p>", {
                 enableHTML: true,

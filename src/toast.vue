@@ -119,7 +119,6 @@
         z-index: 21;
         &.position-top {
             top: 0;
-
             .toast {
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
