@@ -1,5 +1,4 @@
 # 这是一个Vue 的 UI组件仓库
-[![Build Status](https://travis-ci.org/1446450047/Vue-UI-Frame.svg?branch=master)](https://travis-ci.org/1446450047/Vue-UI-Frame)
 #### 作者：何中峰
 #### 开始时间：2020/5/9 起
 #### 结束时间：2020/6/1 止
