@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/1446450047/Vue-UI-Frame.svg?branch=master)](https://travis-ci.org/1446450047/Vue-UI-Frame)
 #### 作者：何中峰
 #### 开始时间：2020/5/9 起
-#### 结束时间：暂无
+#### 结束时间：2020/6/1 止
 
 
 ## 介绍
@@ -24,7 +24,32 @@ npm i --save Vue-UI-Frame
 ```
 引入 Vue-UI-Frame
 ```
-import { Button, ButtonGroup, Icon,...} from "vue-ui-frame";
+import   {Button,
+          ButtonGroup,
+          Icon,
+          Collapse,
+          CollapseItem,
+          Vue,
+          Input,
+          Row,
+          Column,
+          Layout,
+          Sider,
+          Header,
+          Content,
+          Footer,
+          Toast,
+          plugin,
+          Tabs,
+          TabsHead,
+          TabsBody,
+          TabsPane,
+          TabsItem,
+          Popover}
+        from "vue-ui-frame";
+
+Vue.use(plugin);
+
 import "vue-ui-frame/dist/index.css";
 export default {
   name: "App",
@@ -37,7 +62,8 @@ export default {
   }
 ```
 ## 文档
-
+ https://1446450047.github.io/Vue-UI-Frame/
+ 
 ## 提问
 ## 变更记录
 暂无

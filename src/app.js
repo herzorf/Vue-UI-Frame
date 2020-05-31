@@ -3,19 +3,15 @@ import Button from "./button.vue"
 import Icon from "./icon"
 import ButtonGroup from "./g-button-group.vue"
 import Input from "./input"
-
 import Row from "./row"
 import Column from "./column"
-
 import Layout from "./layout"
 import Sider from "./sider"
 import Header from "./header"
 import Content from "./content"
 import Footer from "./footer"
-
 import Toast from "./toast"
 import plugin from "./plugin"
-
 import  Tabs from "./tabs"
 import  TabsHead from "./tabs-head"
 import  TabsBody from "./tabs-body"
