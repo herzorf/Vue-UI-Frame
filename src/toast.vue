@@ -86,7 +86,7 @@
     $background-color: rgb(0, 0, 0, 0.75);
     @keyframes fade-from-down {
         0% {
-            pacity: 0%;
+            opacity: 0;
             transform: translateY(100%);
         }
         100% {
@@ -96,7 +96,7 @@
     }
     @keyframes fade-from-up {
         0% {
-            pacity: 0%;
+            opacity: 0;
             transform: translateY(-100%);
         }
         100% {
@@ -106,7 +106,7 @@
     }
     @keyframes fade-from-middle {
         0% {
-            pacity: 0%;
+            opacity: 0;
         }
         100% {
             opacity: 1;
@@ -152,7 +152,7 @@
         display: flex;
         min-height: $min-height;
         line-height: $line-height;
-        transfrm: translateX(-50%);
+        transform: translateX(-50%);
         font-size: $font-size;
         align-items: center;
         justify-content: center;

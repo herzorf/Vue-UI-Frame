@@ -12,7 +12,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .icon {
         width: 1em;
         height: 1em;

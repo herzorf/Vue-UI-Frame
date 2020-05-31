@@ -35,19 +35,19 @@
             <template>
                 <div slot="content">我出现在下面</div>
             </template>
-            <g-button>点我</g-button>
+            <g-button>鼠标悬浮</g-button>
         </g-popover>
         <g-popover position="top" trigger="hover">
             <template>
                 <div slot="content">我出现在上面</div>
             </template>
-            <g-button>点我</g-button>
+            <g-button>鼠标悬浮</g-button>
         </g-popover>
         <g-popover position="left" trigger="hover">
             <template>
                 <div slot="content">我出现在左边</div>
             </template>
-            <g-button>点我</g-button>
+            <g-button>鼠标悬浮</g-button>
         </g-popover>
         <g-popover position="right" trigger="hover">
             <template>
@@ -55,7 +55,7 @@
                     我会出现在右边
                 </div>
             </template>
-            <g-button>点我</g-button>
+            <g-button>鼠标悬浮</g-button>
         </g-popover>
         <p>代码展示</p>
         <code style="color: white"><pre>{{code1}}</pre></code>
