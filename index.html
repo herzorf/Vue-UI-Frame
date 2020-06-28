@@ -16,24 +16,46 @@
 </head>
 <body>
 <style>
-.content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #728cbb;
-    color: white;
-    border: 1px solid #b1aac6;
-    height: 50px;
 
-}
 </style>
 <div id="app" style="padding: 30px 30px ">
 
-<g-collapse  :selected.sync="selectedTab"  >
-       <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
-       <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
-       <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
-   </g-collapse>
+    <g-button @click='$toast("知道错了没?", {
+    enableHTML: true,
+    position: "top",
+    closeButton: {
+    text: "知道了",
+    callback(toast) {
+    toast.log()
+    }
+    },
+    autoClose: false
+    })'>上方弹出</g-button>
+
+
+    <g-button @click='$toast("<p>知道错了没?</p>", {
+    enableHTML: true,
+    position: "bottom",
+    closeButton: {
+    text: "知道了",
+    callback(toast) {
+    toast.log()
+    }
+    },
+    autoClose: false
+    })'>下方弹出</g-button>
+
+    <g-button @click='$toast("<p>知道错了没?</p>", {
+    enableHTML: true,
+    position: "middle",
+    closeButton: {
+    text: "知道了",
+    callback(toast) {
+    toast.log()
+    }
+    },
+    autoClose: false
+    })'>中间弹出</g-button>
 </div>
 <script src="src/app.js"></script>
 

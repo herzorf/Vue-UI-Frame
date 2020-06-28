@@ -123,7 +123,6 @@
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
                 animation: fade-from-up 0.5s;
-
             }
         }
 
@@ -151,7 +150,6 @@
         display: flex;
         min-height: $min-height;
         line-height: $line-height;
-        transform: translateX(-50%);
         font-size: $font-size;
         align-items: center;
         justify-content: center;
